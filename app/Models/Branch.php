@@ -4,25 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Company extends Model
+class Branch extends Model
 {
-
     protected $fillable = [
-
+        'company_id',
         'name',
         'code',
         'email',
         'phone',
+        'mobile',
         'address',
-        'logo',
+        'latitude',
+        'longitude',
+        'timezone',
         'status'
-
     ];
 
-    public function branches()
+    public function company()
     {
-        return $this->hasMany(Branch::class);
+        return $this->belongsTo(Company::class);
     }
-
-
 }
