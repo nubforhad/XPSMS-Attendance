@@ -131,7 +131,6 @@
                     <li>
                         <a href="{{ route('dashboard') }}" class="nav-link">
                             <i class="bi bi-speedometer2 me-2"></i>
-
                             Dashboard
                         </a>
                     </li>
@@ -139,23 +138,34 @@
                     <li>
                         <a href="{{ route('company.index') }}" class="nav-link">
                             <i class="bi bi-building me-2"></i>
-
                             Company
                         </a>
                     </li>
 
                     <li>
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('branch.index') }}" class="nav-link">
                             <i class="bi bi-diagram-3 me-2"></i>
-
                             Branch
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('department.index') }}" class="nav-link">
+                            <i class="bi bi-diagram-3 me-2"></i>
+                            Department
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('designation.index') }}" class="nav-link">
+                            <i class="bi bi-diagram-3 me-2"></i>
+                            Designation
                         </a>
                     </li>
 
                     <li>
                         <a href="#" class="nav-link">
                             <i class="bi bi-cpu me-2"></i>
-
                             Device
                         </a>
                     </li>
@@ -163,7 +173,6 @@
                     <li>
                         <a href="#" class="nav-link">
                             <i class="bi bi-people me-2"></i>
-
                             Employee
                         </a>
                     </li>
@@ -189,10 +198,8 @@
                     <div class="ms-auto">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
                             <button class="btn btn-danger btn-sm">
                                 <i class="bi bi-box-arrow-right"></i>
-
                                 Logout
                             </button>
                         </form>

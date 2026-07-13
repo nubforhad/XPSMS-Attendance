@@ -24,5 +24,19 @@ class Company extends Model
         return $this->hasMany(Branch::class);
     }
 
+    public function departments()
+    {
+        return $this->hasMany(Department::class);
+    }
+
+    public function designations()
+    {
+        return $this->hasMany(Designation::class);
+    }
+
+    public function devices()
+    {
+        return $this->hasMany(Device::class);
+    }
 
 }
