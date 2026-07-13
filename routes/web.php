@@ -6,6 +6,11 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DesignationController;
+use App\Http\Controllers\AttendanceSyncController;
+use App\Http\Controllers\DeviceController;
+
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,6 +30,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('branch', BranchController::class);
     Route::resource('department', DepartmentController::class);
     Route::resource('designation', DesignationController::class);
+    Route::resource('device', DeviceController::class);
+    Route::post('/device/attendance',[AttendanceSyncController::class,'receive']);
 
 
 });
