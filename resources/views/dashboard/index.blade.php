@@ -12,7 +12,7 @@
                     <div>
                         <p class="text-muted mb-1">Total Company</p>
 
-                        <h3>0</h3>
+                        <h3>{{ $company }}</h3>
                     </div>
 
                     <div class="fs-2 text-primary">
@@ -30,7 +30,7 @@
                     <div>
                         <p class="text-muted mb-1">Total Branch</p>
 
-                        <h3>0</h3>
+                        <h3>{{ $branchCount }}</h3>
                     </div>
 
                     <div class="fs-2 text-success">
@@ -48,7 +48,7 @@
                     <div>
                         <p class="text-muted mb-1">Total Device</p>
 
-                        <h3>0</h3>
+                        <h3>{{ $deviceCount }}</h3>
                     </div>
 
                     <div class="fs-2 text-warning">
@@ -64,9 +64,27 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between">
                     <div>
+                        <p class="text-muted mb-1">Total Employee </p>
+
+                        <h3>{{ $employeeCount }}</h3>
+                    </div>
+
+                    <div class="fs-2 text-danger">
+                        <i class="bi bi-fingerprint"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
                         <p class="text-muted mb-1">Today's Attendance</p>
 
-                        <h3>0</h3>
+                        <h3>90</h3>
                     </div>
 
                     <div class="fs-2 text-danger">
