@@ -164,14 +164,14 @@
                     </li>
 
                     <li>
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('device.index') }}" class="nav-link">
                             <i class="bi bi-cpu me-2"></i>
                             Device
                         </a>
                     </li>
 
                     <li>
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('employee.index') }}" class="nav-link">
                             <i class="bi bi-people me-2"></i>
                             Employee
                         </a>
@@ -193,7 +193,7 @@
                         <i class="bi bi-list"></i>
                     </button>
 
-                    <span class="ms-3 fw-semibold"> Attendance Cloud </span>
+                    <span class="ms-3 fw-semibold"> <a href="{{ route('dashboard') }}">Attendance Cloud</a>  </span>
 
                     <div class="ms-auto">
                         <form method="POST" action="{{ route('logout') }}">
