@@ -31,15 +31,12 @@ class EmployeeController extends Controller
 
         }
         if($request->filled('company')){
-
             $query->where('company_id',$request->company);
         }
         if($request->filled('branch')){
-
             $query->where('branch_id',$request->branch);
         }
         if($request->filled('status')){
-
             $query->where('status',$request->status);
         }
         $employees = $query
@@ -77,19 +74,12 @@ class EmployeeController extends Controller
     {
 
         $request->validate([
-
             'company_id'=>'required|exists:companies,id',
-
             'branch_id'=>'required|exists:branches,id',
-
             'employee_id'=>'required|unique:employees',
-
             'name'=>'required',
-
             'device_user_id'=>'nullable',
-
             'status'=>'required'
-
         ]); 
         Employee::create($request->all()); 
         return redirect()
@@ -97,19 +87,11 @@ class EmployeeController extends Controller
             ->with('success','Employee added successfully.');
 
     } 
-    public function edit(Employee $employee)
-    {
-
+    public function edit(Employee $employee)    {
         $companies = Company::where('status','active')->get();
-
         $branches = Branch::where('status','active')->get();
-
         $departments = Department::where('status','active')->get();
-
         $designations = Designation::where('status','active')->get();
-
-
-
         return view('employee.edit',compact(
             'employee',
             'companies',

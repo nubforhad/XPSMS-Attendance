@@ -9,7 +9,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('employees', function (Blueprint $table) {
-
             $table->id();
             $table->foreignId('company_id')->constrained()->cascadeOnDelete();
             $table->foreignId('branch_id')->constrained()->cascadeOnDelete();
@@ -19,18 +18,13 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
-            $table->string('finger_id')
-                ->nullable();
-            $table->string('device_user_id')
-                ->nullable();
-            $table->date('joining_date')
-                ->nullable();
+            $table->string('finger_id')->nullable();
+            $table->string('device_user_id')->nullable();
+            $table->date('joining_date')->nullable();
             $table->enum('status',[
                 'active',
-                'inactive'
-            ])->default('active');
+                'inactive'  ])->default('active');
             $table->timestamps();
-
         });
     }
     public function down(): void

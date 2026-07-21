@@ -26,43 +26,18 @@ class DeviceController extends Controller
             });
         }
         if($request->filled('company')){
-
             $query->where('company_id',$request->company);
-
         }
         if($request->filled('branch')){
-
             $query->where('branch_id',$request->branch);
-
         }
-
-
         if($request->filled('status')){
-
             $query->where('status',$request->status);
-
         }
-
-
-        $devices = $query
-            ->latest()
-            ->paginate(10);
-
-
-        $companies = Company::where('status','active')
-            ->get();
-
-
-        $branches = Branch::where('status','active')
-            ->get();
-
-
-
-        return view('device.index',compact(
-            'devices',
-            'companies',
-            'branches'
-        ));
+        $devices = $query->latest()->paginate(10);
+        $companies = Company::where('status','active')->get();
+        $branches = Branch::where('status','active')->get();
+        return view('device.index',compact( 'devices', 'companies', 'branches' ));
     } 
     public function create()
     {

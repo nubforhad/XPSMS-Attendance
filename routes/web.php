@@ -10,28 +10,21 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\DashboardController;
 
-
-
 Route::get('/', function () {
     return view('welcome');
 });
 
 
-
-Route::get('/dashboard', [DashboardController::class, 'index'])
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
     Route::resource('company', CompanyController::class);
     Route::resource('branch', BranchController::class);
     Route::resource('department', DepartmentController::class);
     Route::resource('designation', DesignationController::class);
-    Route::resource('device', DeviceController::class); 
     Route::resource('device', DeviceController::class); 
     Route::resource('employee', EmployeeController::class); 
 
